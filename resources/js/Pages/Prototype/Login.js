@@ -5,9 +5,9 @@ import { Link, Head } from "@inertiajs/inertia-react";
 
 export default function Login() {
     return (
-    <>
-    <Head  title="Sign Up" />
-      <div className="mx-auto max-w-screen min-h-screen bg-black text-white md:px-10 px-3">
+        <>
+            <Head title="Sign Up" />
+            <div className="mx-auto max-w-screen min-h-screen bg-black text-white md:px-10 px-3">
                 <div className="fixed top-[-50px] hidden lg:block">
                     <img
                         src="/images/signup-image.png"
@@ -53,25 +53,28 @@ export default function Login() {
                                 </div>
                             </div>
                             <div className="grid space-y-[14px] mt-[30px]">
+                                <Link href={route("prototype.dashboard")}>
                                     <Button type="button" variant="primary">
                                         <span className="text-base font-semibold">
                                             Start Watching
                                         </span>
                                     </Button>
-                                    <Link href={route('prototype.register')}>
+                                </Link>
+                                <Link href={route("prototype.register")}>
                                     <Button
                                         type="button"
-                                        variant="light-outline">
+                                        variant="light-outline"
+                                    >
                                         <span className="text-base text-white">
                                             Create New Account
                                         </span>
                                     </Button>
-                                    </Link>
+                                </Link>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
-    </>
+        </>
     );
 }
