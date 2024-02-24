@@ -4538,7 +4538,7 @@ function FeaturedMovie(_ref) {
         })
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
-      href: route("prototype.movie.show", slug),
+      href: route("user.dashboard.movie.show", slug),
       className: "inset-0 absolute z-50"
     })]
   });
@@ -4706,7 +4706,7 @@ function MovieCard(_ref) {
         alt: ""
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
-      href: route("prototype.movie.show", slug),
+      href: route("user.dashboard.movie.show", slug),
       className: "inset-0 absolute z-50"
     })]
   });
@@ -6714,6 +6714,60 @@ function Dashboard(_ref) {
           }, movie.id);
         })
       })]
+    })]
+  });
+}
+
+/***/ }),
+
+/***/ "./resources/js/Pages/User/Dashboard/Movie/Show.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/Pages/User/Dashboard/Movie/Show.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Show)
+/* harmony export */ });
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var react_player__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-player */ "./node_modules/react-player/lib/index.js");
+/* harmony import */ var react_player__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_player__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+function Show(_ref) {
+  var movie = _ref.movie;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("section", {
+    "class": "mx-auto w-screen h-screen relative watching-page font-poppins bg-form-bg",
+    id: "stream",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "pt-[100px]",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)((react_player__WEBPACK_IMPORTED_MODULE_2___default()), {
+        url: movie.video_url,
+        controls: true,
+        width: "100%",
+        height: "850px"
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      "class": "absolute top-5 left-5 z-20",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_0__.Link, {
+        href: route("user.dashboard.index"),
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+          src: "/icons/ic_arrow-left.svg",
+          "class": "transition-all btn-back w-[46px]",
+          alt: "stream"
+        })
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      "class": "absolute title-video top-7 left-1/2 -translate-x-1/2 max-w-[310px] md:max-w-[620px] text-center",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        "class": "font-medium text-2xl transition-all text-white drop-shadow-md select-none",
+        children: movie.name
+      })
     })]
   });
 }
@@ -63377,6 +63431,8 @@ var map = {
 	"./Prototype/SubscriptionPlan.js": "./resources/js/Pages/Prototype/SubscriptionPlan.js",
 	"./User/Dashboard/Index": "./resources/js/Pages/User/Dashboard/Index.js",
 	"./User/Dashboard/Index.js": "./resources/js/Pages/User/Dashboard/Index.js",
+	"./User/Dashboard/Movie/Show": "./resources/js/Pages/User/Dashboard/Movie/Show.js",
+	"./User/Dashboard/Movie/Show.js": "./resources/js/Pages/User/Dashboard/Movie/Show.js",
 	"./Welcome": "./resources/js/Pages/Welcome.js",
 	"./Welcome.js": "./resources/js/Pages/Welcome.js"
 };
