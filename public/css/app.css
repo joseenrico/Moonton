@@ -970,8 +970,17 @@ input.top-search:focus {
 .w-\[300px\] {
   width: 300px;
 }
+.w-3\/12 {
+  width: 25%;
+}
+.w-6\/12 {
+  width: 50%;
+}
 .w-9\/12 {
   width: 75%;
+}
+.w-2\/12 {
+  width: 16.666667%;
 }
 .w-\[60px\] {
   width: 60px;
@@ -1242,6 +1251,10 @@ input.top-search:focus {
 .bg-alerange {
   --tw-bg-opacity: 1;
   background-color: rgb(251 105 8 / var(--tw-bg-opacity));
+}
+.bg-\[\#f1f1f1\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(241 241 241 / var(--tw-bg-opacity));
 }
 .bg-\[\#333333\] {
   --tw-bg-opacity: 1;
@@ -1582,6 +1595,9 @@ input.top-search:focus {
 }
 .outline-\[\#F1F1F1\] {
   outline-color: #F1F1F1;
+}
+.outline-\[\#f1f1f1\] {
+  outline-color: #f1f1f1;
 }
 .outline-gray-2 {
   outline-color: #E2E0E0;
