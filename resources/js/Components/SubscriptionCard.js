@@ -1,4 +1,5 @@
 import Button from "@/Components/Button";
+
 export default function SubscriptionCard({
     id,
     name,
