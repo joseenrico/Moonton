@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+
 class AuthenticatedSessionController extends Controller
 {
     /**
@@ -37,7 +38,11 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        if (Auth::user()->hasRole('admin')) {
+            return redirect(route('admin.dashboard.movie.index'));
+        }
+
+        return redirect()->route('user.dashboard.index');
     }
 
     /**
