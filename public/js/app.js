@@ -4539,7 +4539,7 @@ function FeaturedMovie(_ref) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     className: "absolute overflow-hidden group mr-[30px]",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-      src: thumbnail,
+      src: "/storage/".concat(thumbnail),
       className: "object-cover rounded-[30px] w-[520px] h-[340px]",
       alt: ""
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
@@ -4742,7 +4742,7 @@ function MovieCard(_ref) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
     className: "absolute group overflow-hidden mr-[30px]",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
-      src: thumbnail,
+      src: "/storage/".concat(thumbnail),
       className: "object-cover rounded-[30px] h-[340px] w-[250px]",
       alt: ""
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
@@ -6045,9 +6045,16 @@ function Index(_ref) {
   var auth = _ref.auth,
       flashMessage = _ref.flashMessage,
       movies = _ref.movies;
+
+  var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.useForm)(),
+      destroy = _useForm["delete"],
+      put = _useForm.put;
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_Layouts_Authenticated_Index__WEBPACK_IMPORTED_MODULE_0__["default"], {
     auth: auth,
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Head, {
+      title: "List of Movie"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
       href: route("admin.dashboard.movie.create"),
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
         type: "button",
@@ -6097,10 +6104,15 @@ function Index(_ref) {
                 })
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
-                type: "button",
-                variant: "warning",
-                children: "Edit"
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+                onClick: function onClick() {
+                  movie.deleted_at ? put(route("admin.dashboard.movie.restore", movie.id)) : destroy(route("admin.dashboard.movie.destroy", movie.id));
+                },
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
+                  type: "button",
+                  variant: "danger",
+                  children: movie.deleted_at ? "Restore" : "Delete"
+                })
               })
             })]
           }, movie.id);
